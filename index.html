@@ -18,11 +18,20 @@
 <meta name="description" content="Послушай загадку и выбери одну из четырёх картинок.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f5a623'/%3E%3Ctext x='32' y='48' text-anchor='middle' font-family='Georgia' font-size='50' font-weight='bold' fill='%23532e17'%3E%3F%3C/text%3E%3C/svg%3E">
 <style>
-:root{color-scheme:light;--ink:#573516;--orange:#d44d13;--gold:#ffce59;--green:#2d743e}*{box-sizing:border-box}body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:radial-gradient(ellipse at 50% 10%,#fff9de 10%,#ffe4a0 70%,#ffd178 100%);min-height:100svh}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:4px solid #245c94;outline-offset:5px}button:disabled{cursor:default}button.primary{border:2px solid #a83b12;background:linear-gradient(#ec7022,#cc4713);color:#fff;border-radius:50px;padding:16px 42px;font-size:clamp(22px,3vw,30px);font-weight:bold;box-shadow:0 5px 0 #a93b12,0 9px 22px #9a571524;transition:transform .15s}button.primary:hover{transform:translateY(-2px)}button.primary:active{transform:translateY(3px);box-shadow:0 2px 0 #a93b12}[hidden]{display:none!important}.intro{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px 34px;gap:22px}.cover{width:min(62svh,470px,88vw);height:auto;border-radius:30px;box-shadow:0 12px 48px #7b490d26;border:6px solid #fff9e7}.intro p{font-size:20px;margin:0;text-align:center}.game{max-width:1440px;margin:auto;padding:30px 36px 28px;min-height:100svh;display:flex;flex-direction:column;justify-content:center}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:24px}h1{font-size:clamp(28px,4vw,46px);margin:0;line-height:1.12}#prompt{font-size:clamp(18px,2.3vw,23px);margin:12px 0 0;min-height:1.3em}.listen{display:flex;align-items:center;gap:10px;border:2px solid #bc893e;background:#fffaf0;border-radius:40px;padding:12px 20px;color:var(--ink);font-size:18px;white-space:nowrap}.listen svg{width:24px;height:24px;flex-shrink:0}.listen:disabled{opacity:.5}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;align-items:start}.card{position:relative;display:block;border:5px solid #fffdf5;padding:0;background:#fffdf5;border-radius:24px;box-shadow:0 6px 0 #c7974940,0 12px 24px #8f5d1415;transition:transform .2s,border-color .2s,opacity .2s;overflow:visible;min-width:0}.card img{display:block;width:100%;height:auto;aspect-ratio:1180/1636;object-fit:contain;border-radius:19px}.card:not(:disabled):hover{transform:translateY(-7px)}.card:not(:disabled):active{transform:scale(.97)}.card.correct{border-color:#338b43;transform:translateY(-6px);box-shadow:0 0 0 5px #338b4320,0 14px 30px #326b3230}.card.wrong{border-color:#d47934;animation:shake .4s}.card.rejected{opacity:.52}.badge{position:absolute;right:-10px;top:-14px;width:48px;height:48px;border:4px solid #fffdf5;border-radius:50%;background:var(--green);color:white;font:bold 30px/40px Arial;text-align:center;box-shadow:0 4px 10px #0002}.wrong .badge{background:#d47934}.footer{min-height:88px;padding-top:27px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}.result{font-size:clamp(22px,3vw,32px);font-weight:bold;text-align:center;margin:0}.again{background:#fff9e7;color:var(--ink);font-size:20px;padding:12px 24px;border:2px solid #bb883d;border-radius:40px}.sound-error{font:16px/1.5 Arial,sans-serif;text-align:center;color:#9e3414;margin:14px 0 0}.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}.confetti i{position:absolute;top:-20px;width:11px;height:18px;border-radius:3px;animation:fall 2.8s ease-in forwards}@keyframes fall{to{transform:translate(var(--drift),110svh) rotate(600deg)}}@keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}@media(max-width:760px){.game{padding:22px 18px;justify-content:flex-start}.top{align-items:flex-start;margin-bottom:20px}.listen{font-size:0;padding:12px}.listen svg{width:25px;height:25px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 16px;max-width:540px;width:100%;margin:auto}.card{border-width:4px;border-radius:19px}.card img{border-radius:15px}.badge{width:38px;height:38px;font-size:24px;line-height:30px;right:-7px;top:-10px}.footer{padding-top:22px;min-height:80px}.intro p{font-size:18px}}@media(min-width:761px) and (max-height:800px){.game{max-width:1140px;padding-top:22px}.cards{max-width:1050px;width:100%;margin:0 auto}.card img{max-height:54svh}.footer{padding-top:22px;min-height:75px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.confetti{display:none}}
-.card.speaking{border-color:#f0a529;box-shadow:0 0 0 4px #f0a52940}
-
-.footer .primary{font-size:22px;padding:12px 26px}
-@media(max-width:760px){.footer .primary{font-size:20px}}
+:root{color-scheme:dark;--ink:#573516;--green:#2d743e}*{box-sizing:border-box}html,body{margin:0;background:#000;color:#fff}body{font-family:Georgia,'Times New Roman',serif;min-height:100vh;min-height:100svh}button{font:inherit;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #8ac9ff;outline-offset:4px}button:disabled{cursor:default}.primary:disabled,.again:disabled{opacity:.58}[hidden]{display:none!important}
+.primary{border:2px solid #a83b12;background:linear-gradient(#ec7022,#cc4713);color:#fff;border-radius:40px;padding:14px 30px;font-size:24px;font-weight:bold;box-shadow:0 4px 0 #a93b12}.again{background:#fff9e7;color:var(--ink);font-size:20px;padding:11px 20px;border:2px solid #bb883d;border-radius:40px;white-space:nowrap;min-height:46px}
+.intro{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;gap:24px}.intro h1{font-size:clamp(30px,6vw,48px);text-align:center}.intro p{font-size:20px;margin:0;text-align:center}h1{margin:0;line-height:1.15}
+.game{width:100%;max-width:1320px;height:100vh;height:100svh;margin:auto;padding:24px 30px;display:grid;grid-template-rows:104px minmax(0,1fr) 74px;gap:16px;overflow:hidden;overflow-anchor:none}
+.top{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:64px 28px;column-gap:16px;row-gap:8px;align-items:center;min-width:0}.top h1{font-size:clamp(26px,3.4vw,42px)}#prompt{grid-column:1/-1;margin:0;font-size:20px;line-height:28px;height:28px;color:#fff}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:22px;min-height:0;width:100%;align-items:stretch}
+.card{position:relative;display:block;height:100%;min-width:0;min-height:0;border:4px solid #fffdf5;padding:0;background:#fffdf5;border-radius:20px;overflow:visible;transition:border-color .2s,opacity .2s;box-shadow:none}.card img{display:block;width:100%;height:100%;min-height:0;object-fit:contain;border-radius:15px}.card.speaking{border-color:#f0a529;box-shadow:0 0 0 3px #f0a52940}.card.correct{border-color:#338b43;box-shadow:0 0 0 3px #338b4320}.card.wrong{border-color:#d47934}.card.rejected{opacity:.5}.badge{position:absolute;right:-8px;top:-10px;width:42px;height:42px;border:3px solid #fffdf5;border-radius:50%;background:var(--green);color:#fff;font:bold 28px/36px Arial;text-align:center;z-index:1}.wrong .badge{background:#d47934}
+.footer{display:grid;place-items:center;min-height:0;width:100%;padding:0}.footer .primary{width:min(100%,290px);height:62px;font-size:20px;padding:8px 15px;line-height:1.18}.footer #finish{font-size:18px;max-width:310px;width:100%}
+.result-overlay{position:fixed;inset:0;overflow:hidden;display:grid;place-items:center;pointer-events:none;z-index:20;opacity:0;padding:24px}.result-overlay span{color:#fff;font-size:clamp(28px,6vw,52px);font-weight:bold;text-align:center;text-shadow:0 2px 15px #000,0 0 5px #000;background:#000d;padding:22px 26px;border-radius:22px;max-width:90vw;line-height:1.2}.result-overlay.visible{opacity:1}.result-overlay.visible span{animation:feedback-bloom 2.8s ease-in-out both}@keyframes feedback-bloom{0%{opacity:0;transform:scale(.7)}25%{opacity:1;transform:scale(.93)}65%{opacity:1;transform:scale(1.04)}100%{opacity:0;transform:scale(1.13)}}
+.sound-error{position:fixed;left:50%;bottom:94px;transform:translateX(-50%);z-index:30;width:min(92vw,640px);background:#202020;border:1px solid #aaa;border-radius:10px;padding:12px;margin:0;color:#fff;font:16px/1.4 Arial,sans-serif;box-shadow:0 4px 20px #000a}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}.confetti i{position:absolute;top:-20px;width:11px;height:18px;border-radius:3px;animation:fall 2.8s ease-in forwards}@keyframes fall{to{transform:translate(var(--drift),110vh) rotate(600deg)}}
+@media(max-width:760px){.game{padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));padding-bottom:max(12px,env(safe-area-inset-bottom));grid-template-rows:88px minmax(0,1fr) 64px;gap:12px}.top{grid-template-rows:58px 22px;column-gap:10px;row-gap:8px}.top h1{font-size:25px}.again{font-size:18px;padding:10px 15px}#prompt{font-size:17px;line-height:22px;height:22px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:15px;max-width:560px;margin:0 auto}.card{border-radius:17px}.card img{border-radius:12px}.badge{width:34px;height:34px;font-size:23px;line-height:28px;right:-6px;top:-8px}.footer .primary{width:min(100%,258px);height:56px;font-size:19px}.footer #finish{height:56px;font-size:17px;width:min(100%,290px)}.intro p{font-size:18px}}
+@media(max-width:360px){.game{padding-left:12px;padding-right:12px;gap:10px}.top h1{font-size:23px}.again{font-size:17px;padding:9px 12px}#prompt{font-size:16px}.cards{gap:12px}}
+@media(orientation:landscape) and (max-height:520px){.game{grid-template-rows:66px minmax(0,1fr) 52px;gap:9px;padding:10px 16px}.top{grid-template-rows:36px 22px;row-gap:6px}.top h1{font-size:25px}.again{font-size:17px;padding:7px 14px;min-height:36px}#prompt{font-size:17px;height:22px;line-height:22px}.cards{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr);max-width:none;gap:14px}.footer .primary,.footer #finish{height:46px;font-size:17px}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}.confetti{display:none}.result-overlay.visible span{animation:feedback-fade 2.8s linear both}@keyframes feedback-fade{0%,100%{opacity:0}10%,80%{opacity:1}}}
 </style>
 
 </head>
@@ -33,16 +42,16 @@
 <button class="primary" id="start">Начать</button><p>Послушай загадку и выбери картинку</p>
 </section>
 <section class="game" id="game" hidden aria-label="Загадки">
-<header class="top"><div><h1 id="questionTitle">Какое это время года?</h1><p id="prompt" aria-live="polite">Слушай загадку…</p></div><button class="listen" id="listen" aria-label="Послушать загадку ещё раз"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4zM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg><span>Послушать ещё</span></button></header>
+<header class="top"><h1 id="questionTitle">Какое это время года?</h1><button class="again" id="again" aria-label="Начать эту загадку ещё раз">Ещё раз</button><p id="prompt" aria-live="polite">Слушай загадку…</p></header>
 <div class="cards" id="cards">
 <button class="card" data-answer="winter" aria-label="Зима"><img src="ЗАГАДКИ зима.png" alt="Зима: зайчата в шапках и заснеженный лес" width="861" height="1200"><span class="badge" hidden aria-hidden="true"></span></button>
 <button class="card" data-answer="summer" aria-label="Лето"><img src="ЗАГАДКИ лето.png" alt="Лето: медвежонок и оленёнок у пруда" width="862" height="1200"><span class="badge" hidden aria-hidden="true"></span></button>
 <button class="card" data-answer="autumn" aria-label="Осень"><img src="ЗАГАДКИ осень.png" alt="Осень: лисёнок и барсук среди золотых листьев" width="866" height="1200"><span class="badge" hidden aria-hidden="true"></span></button>
 <button class="card" data-answer="spring" aria-label="Весна"><img src="ЗАГАДКИ весна.png" alt="Весна: ёжик и белочка, цветы и дождик" width="862" height="1200"><span class="badge" hidden aria-hidden="true"></span></button>
 </div>
-<div class="footer"><p class="result" id="result" role="status" aria-live="polite"></p><button class="again" id="again" hidden>Ещё раз</button><button class="primary" id="next" hidden>Перейти к следующей загадке</button></div><p class="sound-error" id="soundError" role="alert" hidden>Не удалось включить звук. Нажми «Послушать ещё».</p>
+<div class="footer"><button class="primary" id="next" disabled>Следующая загадка</button><button class="primary" id="finish" hidden aria-label="Молодец! Ты отлично справился. Выйти из игры">Молодец!<br>Ты отлично справился</button></div><p class="sound-error" id="soundError" role="alert" hidden>Не удалось включить звук. Нажми «Ещё раз».</p>
 </section>
-</main><div class="confetti" id="confetti" aria-hidden="true"></div>
+</main><div class="result-overlay" id="result" role="status" aria-live="polite" aria-atomic="true"><span id="resultText"></span></div><div class="confetti" id="confetti" aria-hidden="true"></div>
 <audio id="player" preload="auto" playsinline></audio>
 <script>
 'use strict';
@@ -81,7 +90,7 @@ const RIDDLES=[
  {id:'leaf',title:'Что это?',audio:'загадка-лист.mp3',choices:NATURE_CHOICES,correct:'leaf'}
 ];
 const $=id=>document.getElementById(id),cards=[...document.querySelectorAll('.card')],player=$('player');
-let phase='intro',round=0,roundIndex=0,celebrationTimer,audioRun=0,canAdvance=false;
+let phase='intro',round=0,roundIndex=0,celebrationTimer,audioRun=0,canAdvance=false,feedbackTimer;
 const currentRiddle=()=>RIDDLES[roundIndex];
 function showError(text){$('soundError').textContent=text;$('soundError').hidden=false;}
 function stopAudio(){audioRun++;player.onended=null;player.onerror=null;player.pause();try{player.currentTime=0;}catch(e){}}
@@ -94,15 +103,31 @@ function playAudio(filename,onDone){
 }
 function updateButtons(){
  cards.forEach(c=>c.disabled=phase!=='playing'||c.classList.contains('rejected'));
- $('listen').disabled=phase!=='playing';
- $('next').hidden=!(canAdvance&&roundIndex+1<RIDDLES.length);
- $('again').hidden=!canAdvance;
+ $('again').disabled=phase==='speaking'||phase==='feedback'||(phase==='won'&&!canAdvance);
+ const finished=canAdvance&&roundIndex===RIDDLES.length-1;
+ $('next').hidden=finished;
+ $('next').disabled=!canAdvance||roundIndex+1>=RIDDLES.length;
+ $('finish').hidden=!finished;
+}
+function clearFeedback(){clearTimeout(feedbackTimer);$('result').classList.remove('visible');$('resultText').textContent='';}
+function showFeedback(text){
+ clearFeedback();$('resultText').textContent=text;
+ void $('result').offsetWidth;
+ $('result').classList.add('visible');
+ feedbackTimer=setTimeout(clearFeedback,2900);
+}
+function exitGame(){
+ if(!canAdvance||roundIndex!==RIDDLES.length-1)return false;
+ round++;stopAudio();clearFeedback();clearTimeout(celebrationTimer);$('confetti').replaceChildren();
+ try{window.close();}catch(e){}
+ setTimeout(()=>{window.location.replace('about:blank');},150);
+ return true;
 }
 function startRound(index=roundIndex){
  if(!Number.isInteger(index)||!RIDDLES[index])return false;
  round++;roundIndex=index;canAdvance=false;clearTimeout(celebrationTimer);
  $('confetti').replaceChildren();stopAudio();phase='playing';
- $('intro').hidden=true;$('game').hidden=false;$('result').textContent='';$('soundError').hidden=true;
+ $('intro').hidden=true;$('game').hidden=false;clearFeedback();$('soundError').hidden=true;
  const riddle=currentRiddle();$('questionTitle').textContent=riddle.title;
  cards.forEach((c,i)=>{
   const key=riddle.choices[i],answer=ANSWERS[key],img=c.querySelector('img');
@@ -120,7 +145,7 @@ function listen(){
 function nextRiddle(){
  if(!canAdvance||phase!=='won'||roundIndex+1>=RIDDLES.length)return false;
  const started=startRound(roundIndex+1);
- if(started)$('listen').focus({preventScroll:true});
+ if(started)$('again').focus({preventScroll:true});
  return started;
 }
 function celebrate(){
@@ -136,20 +161,20 @@ function choose(answer){
  if(!c||!ANSWERS[answer])return {accepted:false,phase};
  if(phase!=='playing'||c.disabled)return {accepted:false,phase};
  const chosen=ANSWERS[answer],riddle=currentRiddle();
- phase='speaking';$('soundError').hidden=true;$('result').textContent='';
+ phase='speaking';$('soundError').hidden=true;clearFeedback();
  $('prompt').textContent='Слушай…';c.classList.add('speaking');updateButtons();
  playAudio(chosen.voice,()=>{
   c.classList.remove('speaking');const badge=c.querySelector('.badge');badge.hidden=false;
   if(answer===riddle.correct){
    phase='won';c.classList.add('correct');badge.textContent='✓';
    $('prompt').textContent='Ты разгадал загадку!';
-   $('result').textContent='Правильно! Это '+chosen.name.toLowerCase()+'!';$('result').style.color='var(--green)';
+   showFeedback('Правильно!');
    updateButtons();celebrate();
    playAudio('победа.mp3',()=>{canAdvance=true;updateButtons();});
   }else{
    phase='feedback';c.classList.add('wrong');badge.textContent='×';
    $('prompt').textContent='Посмотри на другие картинки';
-   $('result').textContent='Попробуй ещё!';$('result').style.color='var(--ink)';updateButtons();
+   showFeedback('Попробуй ещё раз!');updateButtons();
    playAudio('проигрыш.mp3',()=>{
     c.classList.remove('wrong');c.classList.add('rejected');badge.hidden=true;
     phase='playing';updateButtons();cards.find(x=>!x.disabled)?.focus({preventScroll:true});
@@ -166,7 +191,7 @@ document.querySelectorAll('.card img').forEach(img=>{
 $('start').addEventListener('click',()=>startRound(0));
 $('again').addEventListener('click',()=>startRound(roundIndex));
 $('next').addEventListener('click',nextRiddle);
-$('listen').addEventListener('click',listen);
+$('finish').addEventListener('click',exitGame);
 cards.forEach(c=>c.addEventListener('click',()=>choose(c.dataset.answer)));
 </script>
 </body></html>
