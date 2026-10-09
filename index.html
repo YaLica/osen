@@ -60,17 +60,25 @@ const ANSWERS={
  hare:{name:'Заяц',image:'ЗАГАДКИ заяц.png',voice:'заяц.mp3',alt:'Заяц'},
  wolf:{name:'Волк',image:'ЗАГАДКИ волк.png',voice:'волк.mp3',alt:'Волк'},
  bear:{name:'Медведь',image:'ЗАГАДКИ медведь.png',voice:'медведь.mp3',alt:'Медведь'},
- hedgehog:{name:'Ёж',image:'ЗАГАДКИ ёж.png',voice:'ёж.mp3',alt:'Ёж'}
+ hedgehog:{name:'Ёж',image:'ЗАГАДКИ ёж.png',voice:'ёж.mp3',alt:'Ёж'},
+ mushroom:{name:'Гриб',image:'ЗАГАДКИ гриб.png',voice:'гриб.mp3',alt:'Гриб'},
+ leaf:{name:'Лист',image:'ЗАГАДКИ лист.png',voice:'лист.mp3',alt:'Лист'},
+ rowan:{name:'Рябина',image:'ЗАГАДКИ рябина.png',voice:'рябина.mp3',alt:'Рябина'},
+ nuts:{name:'Орехи',image:'ЗАГАДКИ орехи.png',voice:'орехи.mp3',alt:'Орехи'}
 };
 const WEATHER_CHOICES=['hail','snow','rain','leaves'];
 const ANIMAL_CHOICES=['hare','wolf','bear','hedgehog'];
+const NATURE_CHOICES=['mushroom','leaf','rowan','nuts'];
 const RIDDLES=[
  {id:'autumn',title:'Какое это время года?',audio:'zagadka.mp3',choices:['winter','summer','autumn','spring'],correct:'autumn'},
  {id:'rain',title:'Что это?',audio:'zagadka-dozhd.mp3',choices:WEATHER_CHOICES,correct:'rain'},
  {id:'leaves',title:'Что это?',audio:'zagadka-listopad.mp3',choices:WEATHER_CHOICES,correct:'leaves'},
  {id:'hare',title:'Кто это?',audio:'загадка-заяц.mp3',choices:ANIMAL_CHOICES,correct:'hare'},
  {id:'wolf',title:'Кто это?',audio:'загадка-волк.mp3',choices:ANIMAL_CHOICES,correct:'wolf'},
- {id:'bear',title:'Кто это?',audio:'загадка-медведьмедведь.mp3',choices:ANIMAL_CHOICES,correct:'bear'}
+ {id:'bear',title:'Кто это?',audio:'загадка-медведьмедведь.mp3',choices:ANIMAL_CHOICES,correct:'bear'},
+ {id:'rowan',title:'Что это?',audio:'загадка-рябина(1).mp3',choices:NATURE_CHOICES,correct:'rowan'},
+ {id:'nuts',title:'Что это?',audio:'загадка -орехи.mp3',choices:NATURE_CHOICES,correct:'nuts'},
+ {id:'leaf',title:'Что это?',audio:'загадка-лист.mp3',choices:NATURE_CHOICES,correct:'leaf'}
 ];
 const $=id=>document.getElementById(id),cards=[...document.querySelectorAll('.card')],player=$('player');
 let phase='intro',round=0,roundIndex=0,celebrationTimer,audioRun=0,canAdvance=false;
